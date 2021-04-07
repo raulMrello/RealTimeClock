@@ -33,9 +33,10 @@ class RealTimeClock {
   
 	/** Lee la hora actual con formato standard
      *  @param t Recibe la hora en formato 'struct tm'
+     *  @param t Recibe el tiempo transcurrido en segundos desde el ultimo apagado
      *  @return Código de error o 0.
      */
-    virtual int getTime(tm* t) = 0;
+    virtual int getTime(tm* t, time_t* pw_fail) = 0;
     
     
 	/** Actualiza la hora del RTC
